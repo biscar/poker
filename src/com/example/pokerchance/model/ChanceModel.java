@@ -40,7 +40,6 @@ public class ChanceModel {
 		this.chance.riverPercent = calculate_river_percent(outs);
 		this.chance.ternRiverPercent = calculate_tr_percent(outs);
 		
-		
 		notifyListener();
 	}
 	

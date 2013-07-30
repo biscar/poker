@@ -7,7 +7,7 @@ import java.text.NumberFormat;
 public class Util {
 	
  public static String formatChance(float num) {
-	 double value = new BigDecimal(num).setScale(3, RoundingMode.UP).doubleValue();
+	 double value = new BigDecimal(num).setScale(2, RoundingMode.UP).doubleValue();
 	 return String.format("%2.2f : 1", value); 
  }
 	
@@ -17,7 +17,7 @@ public class Util {
  }
 	
  public static String formatPercent(float num) {
-	 double value = new BigDecimal(num).setScale(3, RoundingMode.UP).doubleValue();
+	 double value = new BigDecimal(num).setScale(2, RoundingMode.UP).doubleValue();
 	 return String.format("%2.2f", value) + "%"; 
  }
 

@@ -68,7 +68,7 @@ public class ChanceFragment extends Fragment {
 		public void onClick(View v) {
 			float number = Float.parseFloat(outs.getText().toString());
 			
-			if(number > 0){
+			if(number > 1){
 				number--;
 				chanceModel.setOuts(number);	
 			}
@@ -81,7 +81,7 @@ public class ChanceFragment extends Fragment {
 		public void onClick(View v) {
 			float number = Float.parseFloat(outs.getText().toString());
 			
-			if(number < 22){
+			if(number < 52){
 				number++;
 				chanceModel.setOuts(number);
 			}
