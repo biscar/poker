@@ -36,7 +36,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <TextView
-                    android:id="@+id/prcent_tern_tv"
+                    android:id="@+id/percent_tern_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1"

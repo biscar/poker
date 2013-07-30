@@ -1,7 +1,7 @@
 package com.example.pokerchance;
 
 
-import com.example.pokerchance.fragments.Chance;
+import com.example.pokerchance.fragments.ChanceFragment;
 import com.example.pokerchance.fragments.Tournament;
 
 import android.app.ActionBar;
@@ -167,7 +167,7 @@ public class MainActivity extends FragmentActivity implements
 			
 			switch (getArguments().getInt(ARG_SECTION_NUMBER)) {
 			case 1:
-			  Chance chance = new Chance();
+			  ChanceFragment chance = new ChanceFragment();
 			  return chance.onCreateView(inflater, container, savedInstanceState);
 			case 2:
 				Tournament tournament = new Tournament();

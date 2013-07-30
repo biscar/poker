@@ -16,13 +16,20 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Chance extends Fragment {
+public class ChanceFragment extends Fragment {
     
 	private Context mContext;
 	private Button dec;
 	private Button inc;
 	private TextView outs;
+	
 	private TextView ternChance;
+	private TextView riverChance;
+	private TextView trChance;
+	
+	private TextView ternPercent;
+	private TextView riverPercent;
+	private TextView trPercent;
 	
 	final ChanceModel chanceModel = new ChanceModel();
 	
@@ -38,6 +45,13 @@ public class Chance extends Fragment {
 		outs = (TextView) view.findViewById(R.id.outs_tv);
 		
 		ternChance =(TextView) view.findViewById(R.id.chance_tern_tv);
+		riverChance =(TextView) view.findViewById(R.id.chance_river_tv);
+		trChance =(TextView) view.findViewById(R.id.chance_tern_river_tv);
+		
+		ternPercent =(TextView) view.findViewById(R.id.percent_tern_tv);
+		riverPercent =(TextView) view.findViewById(R.id.percent_river_tv);
+		trPercent =(TextView) view.findViewById(R.id.percent_tern_river_tv);
+		
 		
 		dec.setOnClickListener(onDecClick);
 		inc.setOnClickListener(onIncClick);
@@ -52,18 +66,26 @@ public class Chance extends Fragment {
 	OnClickListener onDecClick = new OnClickListener() {
 		@Override
 		public void onClick(View v) {
-			int number = Integer.parseInt(outs.getText().toString());
-			number--;
-			chanceModel.setOuts(number);
+			float number = Float.parseFloat(outs.getText().toString());
+			
+			if(number > 0){
+				number--;
+				chanceModel.setOuts(number);	
+			}
+			
 		}
 	};
 	
 	OnClickListener onIncClick = new OnClickListener() {
 		@Override
 		public void onClick(View v) {
-			int number = Integer.parseInt(outs.getText().toString());
-			number++;
-			chanceModel.setOuts(number);
+			float number = Float.parseFloat(outs.getText().toString());
+			
+			if(number < 22){
+				number++;
+				chanceModel.setOuts(number);
+			}
+			
 		}
 	};
 		
@@ -73,7 +95,15 @@ public class Chance extends Fragment {
 		public void onOutsChange(ChanceModel model) {
 
 			outs.setText(model.getOuts());
+			
 			ternChance.setText(model.getTernChance());
+			riverChance.setText(model.getRiverChance());
+			trChance.setText(model.getTRChance());
+			
+			ternPercent.setText(model.getTernPercent());
+			riverPercent.setText(model.getRiverPercent());
+			trPercent.setText(model.getTRPercent());
+			
 		}
 			
 	
