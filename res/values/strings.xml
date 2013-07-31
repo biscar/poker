@@ -9,5 +9,6 @@
     <string name="menu_settings">Settings</string>
     <string name="title_tab_chance">Шансы</string>
     <string name="title_tab_tournament">Турнир</string>
+    <string name="_">Шансы на улутшение</string>
 
 </resources>
