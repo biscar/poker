@@ -11,7 +11,10 @@ public class Chance {
 	public float riverPercent;
 	public float ternRiverPercent;
 	
-	
+	public float bank;	
+	public float bet;
+	public float bankBetRatio;
+	public float breakeven_percent;
 	
 	
 }

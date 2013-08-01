@@ -14,7 +14,18 @@ public class ChanceModel {
 		void onOutsChange(ChanceModel chanceModel);
 	}
 	
+	public interface BankChangeListener{
+		void onBankChange(ChanceModel chanceModel);
+	}
+	
+	public interface BetChangeListener{
+		void onBetChange(ChanceModel chanceModel);
+	}
+	
 	private OutsChangeListener outsChangeListener;
+	private BankChangeListener bankChangeListener;
+	private BetChangeListener betChangeListener;
+	
 	
 	public void setChance(Chance chance){
 		this.chance = chance;
@@ -22,6 +33,14 @@ public class ChanceModel {
 
 	public void setOutsChangeListener(OutsChangeListener listener){
 		outsChangeListener = listener;
+	}
+	
+	public void setBankChangeListener(BankChangeListener listener){
+		bankChangeListener = listener;
+	}
+	
+	public void setBetChangeListener(BetChangeListener listener){
+		betChangeListener = listener;
 	}
 	
 	private void notifyListener(){

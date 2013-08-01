@@ -7,6 +7,8 @@ import com.example.pokerchance.model.ChanceModel.OutsChangeListener;
 import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,6 +33,11 @@ public class ChanceFragment extends Fragment {
 	private TextView riverPercent;
 	private TextView trPercent;
 	
+	private EditText bank;
+	private EditText bet;
+	private TextView bankBetRatio;
+	private TextView breakevenPercent;
+	
 	final ChanceModel chanceModel = new ChanceModel();
 	
 	@Override
@@ -40,18 +47,45 @@ public class ChanceFragment extends Fragment {
 		
 		mContext = view.getContext();
 		
-		dec = (Button) view.findViewById(R.id.dec_btn);
-		inc = (Button) view.findViewById(R.id.inc_btn);
-		outs = (TextView) view.findViewById(R.id.outs_tv);
+		dec = (Button) view.findViewById(R.id.dec_outs);
+		inc = (Button) view.findViewById(R.id.inc_outs);
+		outs = (TextView) view.findViewById(R.id.outs);
 		
-		ternChance =(TextView) view.findViewById(R.id.chance_tern_tv);
-		riverChance =(TextView) view.findViewById(R.id.chance_river_tv);
-		trChance =(TextView) view.findViewById(R.id.chance_tern_river_tv);
+		ternChance =(TextView) view.findViewById(R.id.tern_chance);
+		riverChance =(TextView) view.findViewById(R.id.river_chance);
+		trChance =(TextView) view.findViewById(R.id.t_r_chance);
 		
-		ternPercent =(TextView) view.findViewById(R.id.percent_tern_tv);
-		riverPercent =(TextView) view.findViewById(R.id.percent_river_tv);
-		trPercent =(TextView) view.findViewById(R.id.percent_tern_river_tv);
+		ternPercent =(TextView) view.findViewById(R.id.tern_percent);
+		riverPercent =(TextView) view.findViewById(R.id.river_percent);
+		trPercent =(TextView) view.findViewById(R.id.t_r_percent);
 		
+		bank = (EditText) view.findViewById(R.id.bank);
+		bet = (EditText) view.findViewById(R.id.bet);
+		
+		bankBetRatio =(TextView) view.findViewById(R.id.bank_bet_ratio);
+		breakevenPercent =(TextView) view.findViewById(R.id.breakeven_percent);
+		
+		bank.addTextChangedListener(new TextWatcher() {
+			
+			@Override
+			public void onTextChanged(CharSequence s, int start, int before, int count) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void beforeTextChanged(CharSequence s, int start, int count,
+					int after) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void afterTextChanged(Editable s) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 		
 		dec.setOnClickListener(onDecClick);
 		inc.setOnClickListener(onIncClick);
