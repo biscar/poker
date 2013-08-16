@@ -3,8 +3,13 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center|top"
+    android:addStatesFromChildren="false"
+    android:animateLayoutChanges="false"
+    android:clipChildren="false"
+    android:clipToPadding="false"
     android:columnCount="4"
-    android:orientation="horizontal" >
+    android:orientation="horizontal"
+    android:useDefaultMargins="false" >
 
     <TextView
         android:id="@+id/textView13"
@@ -16,92 +21,122 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_column="0" >
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        android:layout_gravity="fill" >
 
         <Button
             android:id="@+id/dec_outs"
-            style="?android:attr/buttonStyleSmall"
+            style="@android:style/Widget.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="2"
             android:text="&lt;" />
 
         <TextView
             android:id="@+id/outs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="10"
             android:text="1"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <Button
             android:id="@+id/inc_outs"
-            style="?android:attr/buttonStyleSmall"
+            style="@android:style/Widget.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="2"
             android:text=">" />
 
     </LinearLayout>
-<TextView
-        android:id="@+id/textView2"
 
-        android:text="Терн"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+<TextView
+    android:id="@+id/textView2"
+    style="@android:style/Widget.Button"
+    android:layout_width="wrap_content"
+    android:layout_gravity="fill"
+    android:text="Терн"
+    android:textAllCaps="@android:style/Widget.Button"
+    android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
         android:id="@+id/textView3"
-
+        style="@android:style/Widget.Button"
+        android:layout_width="wrap_content"
+        android:layout_gravity="fill"
         android:text="Ривер"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
         android:id="@+id/textView4"
-
+        style="@android:style/Widget.Button"
+        android:layout_width="wrap_content"
+        android:layout_gravity="fill"
         android:text="Терн и Ривер"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
         android:id="@+id/textView5"
-
+        style="@android:style/Widget.Button"
+        android:layout_width="wrap_content"
+        android:layout_gravity="fill"
         android:text="Шансы против"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
         android:id="@+id/tern_chance"
-        android:text="1"
+        style="@android:style/Widget.Button"
+        android:layout_width="wrap_content"
+        android:layout_gravity="fill"
+        android:text="1:1"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
         android:id="@+id/river_chance"
-        android:text="1"
+        style="@android:style/Widget.Button"
+        android:layout_width="wrap_content"
+        android:layout_gravity="fill"
+        android:text="1:1"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
         android:id="@+id/t_r_chance"
-        android:layout_gravity="left"
-        android:text="1"
+        style="@android:style/Widget.Button"
+        android:layout_width="wrap_content"
+        android:layout_gravity="fill"
+        android:text="1:1"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
         android:id="@+id/textView9"
-        android:layout_gravity="left"
+        style="@android:style/Widget.Button"
+        android:layout_gravity="fill"
         android:text="Вероятность"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
         android:id="@+id/tern_percent"
-        android:layout_gravity="left"
-        android:text="1"
+        style="@android:style/Widget.Button"
+        android:layout_gravity="fill"
+        android:text="33%"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
         android:id="@+id/river_percent"
-        android:layout_gravity="left"
-        android:text="1"
+        style="@android:style/Widget.Button"
+        android:layout_gravity="fill"
+        android:text="33%"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
         android:id="@+id/t_r_percent"
-        android:layout_gravity="left"
-        android:text="1"
+        style="@android:style/Widget.Button"
+        android:layout_width="149dp"
+        android:layout_gravity="fill"
+        android:gravity="center"
+        android:text="33%"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
@@ -114,12 +149,14 @@
 
     <TextView
         android:id="@+id/textView15"
-        android:layout_gravity="left"
+        style="@android:style/Widget.Button"
+        android:layout_gravity="fill"
         android:text="Банк"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText
         android:id="@+id/bank"
+        android:layout_width="wrap_content"
         android:layout_gravity="fill"
         android:ems="5"
         android:inputType="number" >
@@ -129,37 +166,43 @@
 
     <TextView
         android:id="@+id/bank_bet_ratio"
+        style="@android:style/Widget.Button"
         android:layout_column="3"
-        android:layout_gravity="center"
+        android:layout_gravity="fill"
         android:layout_row="5"
+        android:gravity="center"
         android:text="2:1"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
         android:id="@+id/textView17"
-        android:layout_gravity="left"
+        style="@android:style/Widget.Button"
+        android:layout_gravity="fill"
         android:text="Ставка"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText
         android:id="@+id/bet"
         android:layout_column="1"
-        android:layout_gravity="left|top"
+        android:layout_gravity="fill"
         android:layout_row="6"
         android:ems="5"
         android:inputType="number" />
 
     <TextView
         android:id="@+id/textView18"
+        style="@android:style/Widget.Button"
         android:layout_column="2"
-        android:layout_gravity="left|top"
+        android:layout_gravity="fill"
         android:layout_row="6"
-        android:text="% безубыточности" />
+        android:gravity="center"
+        android:text="% " />
 
     <TextView
         android:id="@+id/breakeven_percent"
+        style="@android:style/Widget.Button"
         android:layout_column="3"
-        android:layout_gravity="center"
+        android:layout_gravity="fill"
         android:layout_row="6"
         android:gravity="center"
         android:text="33%"
